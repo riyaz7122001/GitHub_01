@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="registration.css">
+    
+</head>
+
+<body>
+    
+    <div class="container center">
+        <div class="header">
+            <h2>Registration Form</h2>
+        </div>
+        <form action="http://127.0.0.1:5500/swiggy.html" class="form" id="form" name = "myform" onsubmit="return validateForm()" method="post">
+            <div class="form-control success">
+                <label for="Username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter your Username" required>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+            </div>
+            <div class="form-control error">
+                <label for="Email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Enter your Email"  required>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+            </div>
+            <div class="form-control ">
+                <label for="Email">Phone no</label>
+                <input type="text" name="phone" id="phone" placeholder="Enter your Phone no"  required>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+            </div>
+            <div class="form-control">
+                <label for="Password">Password</label>
+                <input type="text" name="username" id="password" placeholder="Enter Password"  required>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+            </div>
+            <div class="form-control">
+                <label for="Password2">Password check</label>
+                <input type="text" name="username" id="password2" placeholder="Re-type Password"  required>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+            </div>
+            <button type="button" id="btn" >Submit</button>
+
+        </form>
+    </div>
+    <script>
+        function seterror(id,error){
+            
+        }
+        
+        function validateForm() {
+        var name = document.forms["myForm"]["username"].value;
+        console.log(name);
+        return false;
+        } 
+        let a =5 ;
+        console.log(a);
+        // if (name == "") {
+        //   alert("Name must be filled out");
+        //   return false;
+        </script>
+        </body>
+
+
+    </script>
+   
+</html>

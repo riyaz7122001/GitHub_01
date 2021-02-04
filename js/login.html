@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" -->
+        <!-- integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" /> -->
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="registration.css">
+    
+</head>
+
+<body>
+    
+    <div class="container center">
+        <div class="header">
+            <h2>Registration Form</h2>
+        </div>
+        <form  class="form" id="myForm" name = "myForm" onsubmit="return validateForm()" method="post">
+            <div class="form-control success">
+                <label for="Username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter your Username" required >
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small id="message1" style="color:red"></small>
+            </div>
+            <div class="form-control error">
+                <label for="Email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Enter your Email" required >
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small id="message2" style="color:red"></small>
+            </div>
+            <div class="form-control ">
+                <label for="Email">Phone no</label>
+                <input type="text" name="phone" id="phone" placeholder="Enter your Phone no" required >
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small id="message3" style="color:red"></small>
+            </div>
+            <div class="form-control">
+                <label for="Password">Password</label>
+                <input type="text" name="username" id="password" placeholder="Enter Password" required >
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small id="message4" style="color:red"></small>
+            </div>
+            <div class="form-control">
+                <label for="Password2">Confirm Password</label>
+                <input type="text" name="username" id="password2" placeholder="Re-type Password" required >
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small id="message5" style="color:red"></small>
+            </div>
+            <!-- <input type="submit" id="btn"> -->
+            <button id="btn" onclick="mySubmit()">Submit</button>
+
+        </form>
+    </div>
+        <script>
+
+            // const form = document.getElementById("form");
+            // const username = document.getElementById("username");
+            // const email = document.getElementById("email");
+            // const phone = document.getElementById("phone");
+            // const passowrd = document.getElementById("passowrd");
+            // const password2 = document.getElementById("password2");
+
+            // form.addEventListener('submit',(event) => {
+            //     event.preventDefault();
+
+            //     validate();
+            // })
+
+            // const isEmail = (emailVal) {
+            //     let symbol = emailVal.indexOf("@")
+            // }
+
+            // const validate = () => {
+                
+            // const usernameVal = username("username").value.trim();
+            // const emailVal = email("email").value.trim();
+            // const phoneVal= phone("phone").value.trim();
+            // const passowrdVal = passowrd("passowrd").value.trim();
+            // const password2Val = password2("password2").value.trim();
+
+
+            // if(usernameVal === "") {
+            //     setError(username,'username cannot be blanked');
+            // }else if(usernameVal.length <= 2){
+            //     setError(username,'username must be greater than 2 characters')
+            // }else {
+            //     setSuccess(username);
+            // }
+
+
+            // if (emailVal === ""){
+            //     setError(username,'email cannot be blanked');
+            // }else if(isEmail(emailVal)){
+            //     setError(emailVal,'email must be min 3 characters');
+            // }else{
+            //     setSuccess(email);
+            // }
+            // }
+            
+            function mySubmit () {
+                // for usernmae validation
+            
+         
+                
+                var correct_value = /^[A-Za-z]+$/;
+                let username = document.getElementById("username").value;
+                if(username  == ""){
+                    document.getElementById("message1").innerHTML = " PLease fill username";
+                    return false;
+                }
+                if(username == 1 || username == 2 || username == 3 || username == 4 || username == 5 || username == 6 || username == 7 || username == 8 || username == 9 || username == 9 || username == 0){
+                    document.getElementById("message1").innerHTML = "Username should only contain characters";
+                    return false;
+                }
+                 if(username.length < 3 && useranme.length > 20){
+                    document.getElementById("message1").innerHTML = "Username must be greater than 3 characters and less than 20 characters";
+                    return false;   
+                }
+                 if(username.match(correct_value)){
+                    
+                  
+                }
+                else{
+                    document.getElementById("message1").innerHTML = " Only alphabets are allowed";
+                    return false;
+                }
+                    
+
+                // for email validation
+              let email = document.myForm.email.value;
+              if(email == ""){
+                document.getElementById('message2').innerHTML = "Please enter your email";
+                  return false;
+              }
+              else if(email.indexOf('@') <= 0 ){
+                  document.getElementById('message2').innerHTML = "Invalid @ position";
+                  return false;
+              }else if(email.charAt(email.length-4) != '.') {
+                document.getElementById('message2').innerHTML = "Invalid . position";
+                  return false;
+              }
+            
+
+            // for phone no
+            let phone = document.getElementById("phone").value;            
+            if(phone == ""){
+                document.getElementById("message3").innerHTML = "Phone no cannot be blank";
+                return false;
+            } else if(isNaN(phone)){
+                document.getElementById("message3").innerHTML = "Only Numeric Values Are Allowed";
+                    return false;
+            }else if(phone.length <10){
+                document.getElementById("message3").innerHTML = "Please enter 10 digit phone no";
+                    return false;
+            }else if(phone.length >10){
+                document.getElementById("message3").innerHTML = "Please enter 10 digit phone no";
+                    return false;
+            } else if((phone.charAt(0) != 9) && (phone.charAt(0) != 8) && (phone.charAt(0) != 7) && (phone.charAt(0) != 6) && (phone.charAt(0) != 5) && (phone.charAt(0) != 4) && (phone.charAt(0) != 3) && (phone.charAt(0) != 2) && (phone.charAt(0) != 1) && (phone.charAt(0) != 0)){
+                document.getElementById("message3").innerHTML = "Phone No should start with number"
+                return false;
+            }
+
+            
+            // for password validation
+            var password = document.getElementById("password").value;
+            var password2 = document.getElementById("password2").value;
+
+            if(password == ""){
+                document.getElementById("message4").innerHTML = "Please enter password";
+                    return false;  
+
+            } else if(password.length < 4){
+                document.getElementById("message4").innerHTML = "Password length must be greater than 5 character";
+
+                    return false;
+
+            }else if(password.length > 20){
+                document.getElementById("message4").innerHTML = "Password length must be less than 25 characters";
+
+                    return false;
+            }
+        
+            // for password2
+            if(password2 == ""){
+                document.getElementById("message5").innerHTML = "Please enter the password field";
+                    return false;   
+            }
+            if(password != password2){
+                document.getElementById("message5").innerHTML = "Password is not same";
+                    return false;
+            }
+            
+            location.href = "https://www.w3schools.com";
+
+             
+        } 
+        let btn  =  document.getElementById("btn");
+             btn.addEventListener('click',() => {
+                 document.getElementById('message1').innerHTML = '';
+                 document.getElementById('message2').innerHTML = '';
+                 document.getElementById('message3').innerHTML = '';
+                 document.getElementById('message4').innerHTML = '';
+                 document.getElementById('message5').innerHTML = '';
+             });
+            
+
+        setTimeout(() => {
+            
+            let btn = document.getElementById("btn");
+            btn.addEventListener('click',() => {
+            })
+        }, 5000);
+            </script>
+ 
+        
+        </body>
+
+
+    </script>
+   
+</html>

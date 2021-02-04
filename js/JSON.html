@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JSON </title>
+</head>
+<body>
+    <ol id= "people"></ol>
+    <p id= "demo"></p>
+
+   <script>
+       /*
+       var person = {
+         
+          name : "riyaz",
+          age : 19,
+          
+          age : 19,
+
+          city : "mumbai",
+        email : function(){
+           return  "riyazshaikh7122001@gmail.com"
+       },
+       address : {
+
+           street : "5 main dos",
+           city : "newYork"
+       },
+       children : ["anjum", "riyaz", "faiyaz"]
+
+
+       }  
+
+       var people = [
+
+
+
+           {
+
+               name : "Riyaz",
+               age : 18
+           },
+
+           {
+
+               name : "Faiyaz",
+               age : 16
+           },
+          
+          {
+
+             name : "Soha",
+             age : 11
+          }
+       ]// person = JSON.stringify(person);
+        //person = JSON.parse(person);
+       //console.log(people[0].name);
+       var text = ""
+
+       for(var a=0; a<people.length; a++){
+
+          // console.log(people[a]);
+           text += "<li>" + "name : " + people[a].name +  " "+ "age : " + people[a].age + "</li>";
+           
+       }
+       document.getElementById('people').innerHTML = text;*/
+
+
+
+       var xhr = new XMLHttpRequest();
+       xhr.onreadystatechange = function() {
+   
+            if(this.readyState==4 && this.status==200){
+
+               // document.getElementById('demo').innerHTML = xhr.response;
+               console.log(this.responseText);
+            }
+       };
+
+       xhr.open("GET", "people.json", true);
+       xhr.send();
+   </script> 
+</body>
+</html>

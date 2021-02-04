@@ -1,0 +1,30 @@
+/* navigation */
+#navBar{
+    flex-direction: column;
+
+}
+/* home section */
+#home{
+    height: 280px;
+    
+}
+#home::before{
+    height: 480px;
+}
+
+/* services section */
+#services{
+    flex-direction: column;
+}
+
+#sevices .box{
+
+}
+
+/* clients section */
+#clients{
+    overflow: hidden;
+}
+/* contact us section */
+
+/* footer */
